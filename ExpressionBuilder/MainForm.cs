@@ -54,8 +54,7 @@ namespace ExpressionBuilder
 
     protected void AddFilter()
     {
-      var control = new ucFilter();
-      control.TypeName = "ExpressionBuilder.Models.Person";
+      var control = new ucFilter { TypeName = "ExpressionBuilder.Models.Person" };
       control.OnAdd += UcFilterOnAdd;
       control.OnRemove += UcFilterOnRemove;
       control.Name = "filter" + pnFilters.Controls.Count;
@@ -72,10 +71,14 @@ namespace ExpressionBuilder
 
     private void UcFilterOnRemove(object sender, EventArgs e)
     {
-      var filter = (sender as Button).Parent;
-      if (pnFilters.Controls.Count > 1)
+      Button button = sender as Button;
+      if (button != null)
       {
-        pnFilters.Controls.Remove(filter);
+        var filter = button.Parent;
+        if (pnFilters.Controls.Count > 1)
+        {
+          pnFilters.Controls.Remove(filter);
+        }
       }
 
       for (var i = 0; i < pnFilters.Controls.Count; i++)
