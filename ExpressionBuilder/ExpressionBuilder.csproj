@@ -8,8 +8,9 @@
     <OutputType>WinExe</OutputType>
     <RootNamespace>ExpressionBuilder</RootNamespace>
     <AssemblyName>ExpressionBuilder</AssemblyName>
-    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <AppDesignerFolder>Properties</AppDesignerFolder>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Platform)' == 'AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -59,11 +60,15 @@
     <Compile Include="Builder\Generic\IFilter.cs" />
     <Compile Include="Builder\Generic\IFilterStatementConnection.cs" />
     <Compile Include="Builder\IFilterStatement.cs" />
-    <Compile Include="Controls\ucFilter.cs" />
+    <Compile Include="Controls\ucFilter.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="Controls\ucFilter.Designer.cs">
       <DependentUpon>ucFilter.cs</DependentUpon>
     </Compile>
-    <Compile Include="MainForm.cs" />
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
@@ -75,12 +80,7 @@
   <ItemGroup>
     <None Include="app.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Controls" />
-    <Folder Include="Builder\Generic" />
-    <Folder Include="Models" />
-    <Folder Include="Builder" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <EmbeddedResource Include="Controls\ucFilter.resx">
       <DependentUpon>ucFilter.cs</DependentUpon>

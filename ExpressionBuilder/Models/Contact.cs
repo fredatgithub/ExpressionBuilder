@@ -1,17 +1,15 @@
-﻿using System;
-
-namespace ExpressionBuilder.Models
+﻿namespace ExpressionBuilder.Models
 {
-	public enum ContactType
-	{
-		Telephone,
-		Email
-	}
-	
-	public class Contact
-	{
-		public ContactType Type { get; set; }
-		public string Value { get; set; }
-		public string Comments { get; set; }
-	}
+  public enum ContactType
+  {
+    Telephone,
+    Email
+  }
+
+  public class Contact
+  {
+    public ContactType Type { get; set; }
+    public string Value { get; set; }
+    public string Comments { get; set; }
+  }
 }
